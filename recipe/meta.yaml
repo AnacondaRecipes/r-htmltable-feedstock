@@ -1,4 +1,4 @@
-{% set version = '1.9' %}
+{% set version = '1.11.1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/htmlTable_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/htmlTable/htmlTable_{{ version }}.tar.gz
-  sha256: 5b487a7f33af77db7d987bf61f3ef2ba18bb629fe7b9802409f8b3485c603132
+  sha256: 98cf29e3a884c45149885d2fde8cb356ee4e63a4fbee3a51a07818482a93b79e
 
 
   # patches:
@@ -28,22 +28,26 @@ build:
     - lib/R/lib/
     - lib/
 
-# Suggests: testthat, XML, xtable, ztable, Hmisc, reshape, rmarkdown, pander, chron, lubridate
+# Suggests: testthat, XML, xtable, ztable, Hmisc, reshape, rmarkdown, pander, chron, lubridate, tibble, tidyr (>= 0.7.2), dplyr (>= 0.7.4)
 requirements:
   build:
     - r-base
     - r-checkmate
+    - r-htmltools
     - r-htmlwidgets
     - r-knitr >=1.6
     - r-magrittr >=1.5
+    - r-rstudioapi >=0.6
     - r-stringr
 
   run:
     - r-base
     - r-checkmate
+    - r-htmltools
     - r-htmlwidgets
     - r-knitr >=1.6
     - r-magrittr >=1.5
+    - r-rstudioapi >=0.6
     - r-stringr
 
 test:
@@ -77,25 +81,26 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: htmlTable
-# Version: 1.9
-# Date: 2017-01-25
+# Version: 1.11.1
+# Date: 2017-12-27
 # Title: Advanced Tables for Markdown/HTML
-# Author: Max Gordon <max@gforge.se>
+# Authors@R: c( person("Max", "Gordon", email = "max@gforge.se", role = c("aut", "cre")), person("Stephen", "Gragg", role=c("aut")), person("Peter", "Konings", role=c("aut")))
 # Maintainer: Max Gordon <max@gforge.se>
 # Description: Tables with state-of-the-art layout elements such as row spanners, column spanners, table spanners, zebra striping, and more. While allowing advanced layout, the underlying css-structure is simple in order to maximize compatibility with word processors such as 'MS Word' or 'LibreOffice'. The package also contains a few text formatting functions that help outputting text compatible with HTML/'LaTeX'.
 # License: GPL (>= 3)
 # URL: http://gforge.se/packages/
 # BugReports: https://github.com/gforge/htmlTable/issues
 # Biarch: yes
-# Imports: stringr, knitr (>= 1.6), magrittr (>= 1.5), methods, checkmate, htmlwidgets
-# Suggests: testthat, XML, xtable, ztable, Hmisc, reshape, rmarkdown, pander, chron, lubridate
+# Imports: stringr, knitr (>= 1.6), magrittr (>= 1.5), methods, checkmate, htmlwidgets, htmltools, rstudioapi (>= 0.6)
+# Suggests: testthat, XML, xtable, ztable, Hmisc, reshape, rmarkdown, pander, chron, lubridate, tibble, tidyr (>= 0.7.2), dplyr (>= 0.7.4)
 # Encoding: UTF-8
 # NeedsCompilation: no
 # VignetteBuilder: knitr
-# RoxygenNote: 5.0.1
-# Packaged: 2017-01-25 10:39:00 UTC; max
+# RoxygenNote: 6.0.1
+# Packaged: 2017-12-27 10:11:01 UTC; Max
+# Author: Max Gordon [aut, cre], Stephen Gragg [aut], Peter Konings [aut]
 # Repository: CRAN
-# Date/Publication: 2017-01-26 12:08:14
+# Date/Publication: 2017-12-27 15:03:34 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
