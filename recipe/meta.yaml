@@ -10,8 +10,8 @@ package:
 source:
   fn: htmlTable_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/htmlTable_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/htmlTable/htmlTable_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/htmlTable_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/htmlTable/htmlTable_{{ version }}.tar.gz
   sha256: 98cf29e3a884c45149885d2fde8cb356ee4e63a4fbee3a51a07818482a93b79e
 
 
