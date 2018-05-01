@@ -1,4 +1,4 @@
-{% set version = '1.11.1' %}
+{% set version = '1.11.2' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,18 +12,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/htmlTable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/htmlTable/htmlTable_{{ version }}.tar.gz
-  sha256: 98cf29e3a884c45149885d2fde8cb356ee4e63a4fbee3a51a07818482a93b79e
-
-
-  # patches:
-   # List any patch files here
-   # - fix.patch
+  sha256: 64a273b1cdf07a7c57b9031315ca665f95d78e70b4320d020f64a139278877d1
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
-
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -85,8 +79,8 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: htmlTable
-# Version: 1.11.1
-# Date: 2017-12-27
+# Version: 1.11.2
+# Date: 2018-01-20
 # Title: Advanced Tables for Markdown/HTML
 # Authors@R: c( person("Max", "Gordon", email = "max@gforge.se", role = c("aut", "cre")), person("Stephen", "Gragg", role=c("aut")), person("Peter", "Konings", role=c("aut")))
 # Maintainer: Max Gordon <max@gforge.se>
@@ -101,10 +95,10 @@ extra:
 # NeedsCompilation: no
 # VignetteBuilder: knitr
 # RoxygenNote: 6.0.1
-# Packaged: 2017-12-27 10:11:01 UTC; Max
+# Packaged: 2018-01-20 14:03:06 UTC; Max
 # Author: Max Gordon [aut, cre], Stephen Gragg [aut], Peter Konings [aut]
 # Repository: CRAN
-# Date/Publication: 2017-12-27 15:03:34 UTC
+# Date/Publication: 2018-01-20 15:30:21 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
