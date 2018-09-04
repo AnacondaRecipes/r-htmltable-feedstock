@@ -1,4 +1,4 @@
-{% set version = '1.11.2' %}
+{% set version = '1.12' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -8,11 +8,10 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: htmlTable_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/htmlTable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/htmlTable/htmlTable_{{ version }}.tar.gz
-  sha256: 64a273b1cdf07a7c57b9031315ca665f95d78e70b4320d020f64a139278877d1
+  sha256: 42f50b8d8704460388cc55708fd9159b576261ab8d3f5968cf24d6b3b619a1d8
 
 build:
   merge_build_host: True  # [win]
@@ -27,6 +26,7 @@ build:
 # Suggests: testthat, XML, xtable, ztable, Hmisc, reshape, rmarkdown, pander, chron, lubridate, tibble, tidyr (>= 0.7.2), dplyr (>= 0.7.4)
 requirements:
   build:
+    - {{posix}}zip               # [win]
 
   host:
     - r-base
@@ -67,7 +67,7 @@ about:
     table spanners, zebra striping, and more. While allowing advanced layout, the underlying
     css-structure is simple in order to maximize compatibility with word processors
     such as 'MS Word' or 'LibreOffice'. The package also contains a few text formatting
-    functions that help outputting text compatible with HTML/'LaTeX'.
+    functions that help outputting text compatible with HTML/LaTeX.
   license_family: GPL3
 
 extra:
@@ -79,12 +79,12 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: htmlTable
-# Version: 1.11.2
-# Date: 2018-01-20
+# Version: 1.12
+# Date: 2018-05-25
 # Title: Advanced Tables for Markdown/HTML
 # Authors@R: c( person("Max", "Gordon", email = "max@gforge.se", role = c("aut", "cre")), person("Stephen", "Gragg", role=c("aut")), person("Peter", "Konings", role=c("aut")))
 # Maintainer: Max Gordon <max@gforge.se>
-# Description: Tables with state-of-the-art layout elements such as row spanners, column spanners, table spanners, zebra striping, and more. While allowing advanced layout, the underlying css-structure is simple in order to maximize compatibility with word processors such as 'MS Word' or 'LibreOffice'. The package also contains a few text formatting functions that help outputting text compatible with HTML/'LaTeX'.
+# Description: Tables with state-of-the-art layout elements such as row spanners, column spanners, table spanners, zebra striping, and more. While allowing advanced layout, the underlying css-structure is simple in order to maximize compatibility with word processors such as 'MS Word' or 'LibreOffice'. The package also contains a few text formatting functions that help outputting text compatible with HTML/LaTeX.
 # License: GPL (>= 3)
 # URL: http://gforge.se/packages/
 # BugReports: https://github.com/gforge/htmlTable/issues
@@ -95,10 +95,10 @@ extra:
 # NeedsCompilation: no
 # VignetteBuilder: knitr
 # RoxygenNote: 6.0.1
-# Packaged: 2018-01-20 14:03:06 UTC; Max
+# Packaged: 2018-05-26 18:15:53 UTC; max
 # Author: Max Gordon [aut, cre], Stephen Gragg [aut], Peter Konings [aut]
 # Repository: CRAN
-# Date/Publication: 2018-01-20 15:30:21 UTC
+# Date/Publication: 2018-05-26 22:01:20 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
